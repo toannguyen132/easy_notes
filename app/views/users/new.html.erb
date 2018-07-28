@@ -1,9 +1,5 @@
 <%# ----- add these lines here: ----- %>
 
-<% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "flash #{key}" %>
-<% end %>
-
 <h1>Sign Up</h1>
 
 <%= form_for @user do |f| %>
