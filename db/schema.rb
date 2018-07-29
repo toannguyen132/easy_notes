@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_07_28_170515) do
 
-  create_table "users", options: "ENGINE=MyISAM DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "username"
     t.string "email"
