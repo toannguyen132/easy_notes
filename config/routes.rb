@@ -5,14 +5,13 @@ Rails.application.routes.draw do
 
   get 'users/new' => 'users#new', as: :new_user
 
-  post 'users' => 'users#create'
+  post 'users', to: 'users#create'
+
+  post 'register', to: 'users#create'
 
   get 'login' => 'sessions#new'
-
   post 'login' => 'sessions#create'
-
   delete 'logout' => 'sessions#destroy'
-
   get 'profile' => 'users#profile'
 
 end

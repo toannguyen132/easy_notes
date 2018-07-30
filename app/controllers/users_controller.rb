@@ -9,12 +9,18 @@ class UsersController < ApplicationController
     @user.email.downcase!
 
     if @user.save
-      flash[:notice] = "Account created successfully!"
-      redirect_to root_path
+      json_response({message: "Register successfully"});
     else
-      flash.now.alert = "Oops, coun't create account."
-      render :new
+      json_response({message: @user.errors.full_messages}, :bad_request);
     end
+
+    # if @user.save
+    #   flash[:notice] = "Account created successfully!"
+    #   redirect_to root_path
+    # else
+    #   flash.now.alert = "Oops, coun't create account."
+    #   render :new
+    # end
   end
 
   def profile
